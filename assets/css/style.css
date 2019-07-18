@@ -45,8 +45,46 @@ because it's a bit more semantic */
 
 .man .body {
     position: absolute;
-    top: 30px;
-    left: 23px;
+    top: 29px;
+    left: 22.5px;
     height: 25px;
     border-left: solid 5px black;
+}
+
+.man .left-arm,
+.man .right-arm {
+    position: absolute;
+    top: 29px;
+    width: 20px;
+    height: 5px;
+    border-top: solid 5px black;
+}
+
+.man .left-arm {
+    transform: rotate( 30deg );
+    left: 4.5px;
+    
+}
+
+.man .right-arm{
+    transform: rotate( -30deg );
+    left: 25.5px;
+}
+
+.man .left-leg,
+.man .right-leg {
+    position: absolute;
+    top: 59px;
+    width: 25px;
+    border-top: solid 5px black;
+}
+
+.man .left-leg {
+    transform: rotate( -45deg );
+    left: 4.5px;
+}
+
+.man .right-leg {
+    transform: rotate( 45deg );
+    left: 20.5px;
 }
