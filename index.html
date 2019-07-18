@@ -10,38 +10,40 @@
 </head>
 
 <body>
-    <h1>Hangman</h1>
+    <div class="chalkboard">
+    <h1 class="title">Hangman</h1>
 
     <div id="game">
-    <div class="stats">
+        <div class="stats">
+            <div>Wins: <span id="wins"></span></div>
+            <div>Losses: <span id="losses"></span></div>
+        </div>
 
-    </div>
-
-    <div class="center-display">
-        <div class="gallow-box">
-        <div class="gallows">
-            <div class="base"></div>
-            <div class="frame"></div>
-            <div class="man">
-                <div class="head"></div>
-                <div class="body"></div>
-                <div class="left-arm"></div>
-                <div class="right-arm"></div>
-                <div class="left-leg"></div>
-                <div class="right-leg"></div>
+        <div class="center-display">
+            <div id="gallow-box">
+                <div class="gallows">
+                    <div class="base"></div>
+                    <div class="frame"></div>
+                    <div class="man">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="left-arm"></div>
+                        <div class="right-arm"></div>
+                        <div class="left-leg"></div>
+                        <div class="right-leg"></div>
+                    </div>
+                </div>
             </div>
+
+            <div id="word"></div>
+
+            
         </div>
-        </div>
 
-        <div class="word"></div>
-
-        <div class="status"></div>
+        <div id="history"></div>
     </div>
-
-    <div class="history"></div>
-    </div>
-
-    <div class="message"></div>
+    <div id="status"></div>
+    <div id="message"></div>
 
 
 

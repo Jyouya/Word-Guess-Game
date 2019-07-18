@@ -20,6 +20,13 @@ Hangman = {
             this.badGuesses = [];
             this.displayedWord = "_".repeat(this.word.length);
             this.gameOver = false;
+            document.querySelector('#word').innerText = this.displayedWord;
+            document.querySelector('#status').innerText = '';
+            document.querySelector('#message').innerText = '';
+            const hist = document.querySelector('#history')
+            while (hist.firstChild) {
+                hist.removeChild(hist.firstChild);
+            }
         },
         // Words from https://www.hangmanwords.com/words
         // Should probably be in a JSON file or something.
@@ -113,11 +120,14 @@ Hangman = {
             //     res += letter == key && letter || state.displayedWord[index];
             // });
             state.displayedWord = res;
-            console.log(state.displayedWord);
+            document.querySelector('#word').innerText = state.displayedWord;
             if (state.displayedWord == state.word) {
                 // Player wins
                 this.stats.wins++;
-                console.log('You Win');
+                document.querySelector('#status').innerText = 'You Win!';
+                document.querySelector('#message').innerText = 'Press "Space" to play again.';
+                document.querySelector('#wins').innerText = this.stats.wins;
+
                 this.gameState.gameOver = true;
             }
 
@@ -133,16 +143,21 @@ Hangman = {
         this.gameState.guessesRemaining--;
         this.gallows.drawNext();
 
+        let newGuess = document.createElement('div');
+        newGuess.innerText = letter;
+        document.querySelector('#history').appendChild(newGuess);
+        
         if (this.gameState.guessesRemaining == 0) {
             // Player Loses
             this.stats.losses++;
-            console.log('You Lose');
+            document.querySelector('#status').innerText = 'You Lose!';
+            document.querySelector('#word').innerText = this.gameState.word;
+            document.querySelector('#message').innerText = 'Press "Space" to play again.';
+            document.querySelector('#losses').innerText = this.stats.losses;
             this.gameState.gameOver = true;
             return;
         }
         
-        // debug
-        console.log(this.gameState.badGuesses);
     },
 
     gallows: {
@@ -154,9 +169,9 @@ Hangman = {
         },
         rules: [
             '.gallows .base {visibility: visible;}',
-            '.gallows .frame {visibility: visible; border-right: 5px solid black;}',
-            '.gallows .frame {border-top: 5px solid black;}',
-            '.gallows .frame {border-left: 5px solid black;}',
+            '.gallows .frame {visibility: visible; border-right: 5px solid white;}',
+            '.gallows .frame {border-top: 5px solid white;}',
+            '.gallows .frame {border-left: 5px solid white;}',
             '.man .head {visibility: visible;}',
             '.man .body {visibility: visible;}',
             '.man .left-arm {visibility: visible;}',
