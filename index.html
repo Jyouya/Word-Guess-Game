@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,44 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <h1>Hangman</h1>
-    <div class="gallows">
-        <div class="base"></div>
-        <div class="frame"></div>
-        <div class="man">
-            <div class="head"></div>
-            <div class="body"></div>
-            <div class="left-arm"></div>
-            <div class="right-arm"></div>
-            <div class="left-leg"></div>
-            <div class="right-leg"></div>
-        </div>
+
+    <div id="game">
+    <div class="stats">
+
     </div>
 
+    <div class="center-display">
+        <div class="gallow-box">
+        <div class="gallows">
+            <div class="base"></div>
+            <div class="frame"></div>
+            <div class="man">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="left-arm"></div>
+                <div class="right-arm"></div>
+                <div class="left-leg"></div>
+                <div class="right-leg"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="word"></div>
+
+        <div class="status"></div>
+    </div>
+
+    <div class="history"></div>
+    </div>
+
+    <div class="message"></div>
+
+
+
+    <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>

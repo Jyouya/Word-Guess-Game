@@ -13,15 +13,18 @@ because it's a bit more semantic */
     border-bottom: 5px solid black;
     width: 115%;
     height: 105%;
+    visibility: hidden;
 }
 
 .gallows .frame {
     position: absolute;
     top: 0;
     left: 0;
-    border: solid 5px black;
-    width: 100%;
-    height: 100%;
+    /* border: solid 5px black; */
+    width: 115%;
+    height: 110%;
+    visibility: hidden;
+    box-sizing: border-box;
 }
 
 .gallows .man {
@@ -41,6 +44,7 @@ because it's a bit more semantic */
     height: 20px;
     border: solid 5px black;
     border-radius: 50%;
+    visibility: hidden;
 }
 
 .man .body {
@@ -49,6 +53,7 @@ because it's a bit more semantic */
     left: 22.5px;
     height: 25px;
     border-left: solid 5px black;
+    visibility: hidden;
 }
 
 .man .left-arm,
@@ -63,12 +68,14 @@ because it's a bit more semantic */
 .man .left-arm {
     transform: rotate( 30deg );
     left: 4.5px;
+    visibility: hidden;
     
 }
 
 .man .right-arm{
     transform: rotate( -30deg );
     left: 25.5px;
+    visibility: hidden;
 }
 
 .man .left-leg,
@@ -82,9 +89,21 @@ because it's a bit more semantic */
 .man .left-leg {
     transform: rotate( -45deg );
     left: 4.5px;
+    visibility: hidden;
 }
 
 .man .right-leg {
     transform: rotate( 45deg );
     left: 20.5px;
+    visibility: hidden;
+}
+
+#game {
+    display: flex;
+}
+
+.stats,
+.center-display,
+.history {
+    width: calc( 100% / 3 );
 }
