@@ -1,3 +1,8 @@
+body {
+    background: url('../images/interlaced.png');
+    font-family: 'Rock Salt', Helvetica;
+}
+
 /* Selectors are a bit more specific than they need to be
 because it's a bit more semantic */
 .gallows {
@@ -103,12 +108,13 @@ because it's a bit more semantic */
     border: ridge 5px silver;
     margin: 0 auto;
     max-width: 1080px;
-    height: 400px;
+    height: 600px;
 }
 
 #game {
     display: flex;
-    width: calc( 100% / 3 + 30%);
+    max-width: 684px;
+    margin: 0 auto;
     /* background: darkslategrey; */
     color: white;
 }
@@ -122,13 +128,15 @@ because it's a bit more semantic */
 .stats,
 #history {
     width: calc( 100% / 6 );
-    flex-grow: .4;
+    flex-grow: 1;
     font-size: 2rem;
+    min-width: 200px;
 }
 
 .center-display {
     width: calc( 100% / 3 );
-    flex-grow: .6
+    /* flex-grow: .6; */
+    min-width: 300px;
 }
 
 #gallow-box,
@@ -148,30 +156,52 @@ because it's a bit more semantic */
 }
 
 #word {
-    letter-spacing: .15em;
+    letter-spacing: .3em;
     font-size: 2rem;
     text-align: center;
 }
 
 #game {
-    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0 auto;
 }
 
 #history {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 10px;
-    font-size: 2rem;
-    grid-row-gap: 10px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 5px;
+    font-size: 1rem;
+    grid-row-gap: 5px;
+    text-align: center;
 }
 
 #status,
 #message {
-    margin-top: 1rem;
+    margin-top: .5rem;
     color: white;
 }
 
 #status {
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 780px) {
+    #game {
+        flex-wrap: wrap;
+    }
+
+    .center-display {
+        width: 50%;
+        max-width: initial;
+    }
+
+    .stats {
+        flex-shrink: 1;
+        min-width: 200px;
+    }
+
+    #history {
+        grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+        grid-template-rows: auto;
+    }
 }

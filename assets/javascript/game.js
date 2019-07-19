@@ -22,7 +22,7 @@ Hangman = {
             this.gameOver = false;
             document.querySelector('#word').innerText = this.displayedWord;
             document.querySelector('#status').innerText = '';
-            document.querySelector('#message').innerText = '';
+            document.querySelector('#message').innerText = 'Press any letter to make a guess';
             const hist = document.querySelector('#history')
             while (hist.firstChild) {
                 hist.removeChild(hist.firstChild);
@@ -100,14 +100,16 @@ Hangman = {
             }
             return;
         }
+        
+        console.log(key.length);
 
         // Test if the key pushed is a letter, and if we have already pushed it
-        if (!(code > 96 && code < 123) || // lower alpha (a-z)
+        if (key.length != 1 ||
+            !(code > 96 && code < 123) || // lower alpha (a-z)
             state.guessHistory.includes(key)) { // duplicate key
             return;
         }
 
-        console.log(key);
         state.guessHistory.push(key);
 
         // Update the string with letters we have guessed
